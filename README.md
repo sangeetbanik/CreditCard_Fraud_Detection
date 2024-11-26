@@ -48,11 +48,20 @@ The system will:
 OOP principles such as encapsulation, abstraction, inheritance, and polymorphism will make the solution modular and scalable.
 
 **Classes that are Included:**
-- *DataHandler*: For data ingestion, cleaning, and preprocessing.
+- *DataHandler*: For data ingestion, and cleaning.
 - *FeatureEngineer*: For creating new features and aggregating existing ones.
 - *FraudDetectionModel*: For building, training, and evaluating the neural network.
 - *InsightsGenerator*: For analyzing results and generating insights.
 - *Pipeline*: A class to orchestrate the workflow.
+
+## 🖥️ Implementation
+Since, fraud detection is a supervised learning problem, we need labels to train a model effectively. But the dataset we used doesn't have any labels indicating fraud status (e.g., is_fraud). So, we used **Unsupervised anomaly detection techniques** to identify anomalies.
+
+We used **Isolation Forest** to identify unusual patterns that may indicate fraud.
+- The model has flagged data points with -1 as anomalies (potential fraud).
+
+Fraud detection model :  
+
 
   
 
