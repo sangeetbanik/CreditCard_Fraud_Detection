@@ -12,6 +12,7 @@ from tensorflow.keras.models import Sequential # type: ignore
 from tensorflow.keras.layers import Dense, Dropout # type: ignore
 from sklearn.metrics import classification_report
 from urllib.request import DataHandler
+from sklearn.decomposition import PCA
 
 print('Import successful')
 
@@ -125,7 +126,40 @@ class Pipeline:
 pipeline  = Pipeline(file_path= "working_dataset.csv")
 fraud_cases,data = pipeline.run()
 
+## Visualising the predicted data
+# Applying PCA to reduce the dimensions of the features to 2D
+pca = PCA(n_components=2)
+pca_features = pca.fit_transform(data.drop(['fraud_prediction', 'credit_card','date','time'], axis=1))
+
+# Visualize the results in 2D
+plt.figure(figsize=(10, 6))
+plt.scatter(pca_features[:, 0], pca_features[:, 1], c=data['fraud_prediction'], cmap='coolwarm', alpha=0.7)
+plt.title('Fraud Detection in PCA-Reduced Feature Space')
+plt.xlabel('PCA Component 1')
+plt.ylabel('PCA Component 2')
+plt.colorbar(label='Fraud Prediction (-1: Fraud, 1: Normal)')
+plt.show()
+
+# Visualize the results in Histogram plot
+fraud_cases = data[data['fraud_prediction'] == -1]
+normal_cases = data[data['fraud_prediction'] == 1]
 
 
+plt.figure(figsize=(10, 6))
+sns.histplot(fraud_cases['transaction_dollar_amount'], color='red', label='Fraud', kde=True)
+sns.histplot(normal_cases['transaction_dollar_amount'], color='blue', label='Normal', kde=True)
+plt.title('Transaction Amount Distribution')
+plt.xlabel('Transaction Amount')
+plt.ylabel('Frequency')
+plt.legend()
+plt.show()
+
+# Visualize the results in Box plot
+plt.figure(figsize=(10, 6))
+sns.boxplot(x=data['fraud_prediction'], y=data['transaction_dollar_amount'], palette="coolwarm", hue=data['fraud_prediction'])
+plt.title('Box Plot of Transaction Amounts by Fraud Detection')
+plt.xlabel('Fraud Prediction (-1: Fraud, 1: Normal)')
+plt.ylabel('Transaction Amount')
+plt.show()
 
 
