@@ -62,6 +62,25 @@ We used **Isolation Forest** to identify unusual patterns that may indicate frau
 
 Fraud detection model :  [CODE](https://github.com/sangeetbanik/CreditCard_Fraud_Detection/blob/main/Detection_model.py)
 
+## 🔮 Conclusion
+The model depicts that the dataset contains **14730 potential fraud cases.**
+
+- Insights from Histogram plot
+    - High transaction amounts (closer to 1000) are more likely to indicate fraud due to the observed peak in fraudulent transactions in that range.
+  
+![output](https://github.com/user-attachments/assets/0ee3a5c6-eef7-46ca-ac8e-3468e828e7d7)
+
+- Insights from Box plot
+    - The median transaction amount for fraudulent predictions is roughly 200.
+    - The median transaction amount for normal predictions is much lower (closer to 50).
+![output1](https://github.com/user-attachments/assets/b43423ce-1aeb-445e-9877-a175db7840c2)
+
+- Insights from Scatter plot
+    - The presence of overlap between fraudulent and normal points suggests that the model might need additional feature engineering or refinement to better distinguish between these categories.
+    - The sparsely distributed fraudulent transactions and the compact normal transactions imply that fraud cases are less frequent but more varied in nature.
+
+  ![output2](https://github.com/user-attachments/assets/a180f36c-7234-4a44-90b2-4e2600b1647c)
+
 
   
 
