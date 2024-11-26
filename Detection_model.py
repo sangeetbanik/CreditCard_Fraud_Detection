@@ -122,7 +122,7 @@ class Pipeline:
         return fraud_cases,data
 
 # Checking the model
-pipeline  = Pipeline(file_path= r"C:\Users\Pratik Banik\Downloads\UM_Projects\Project_4_CreditCardFraud\working_code.csv")
+pipeline  = Pipeline(file_path= "working_dataset.csv")
 fraud_cases,data = pipeline.run()
 
 
