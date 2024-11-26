@@ -38,5 +38,21 @@ Here is the column description for *transactions.csv*<br>
     - new columns such as, **year**,**month**, **day** and **day_of_week**, are created from the **date** column on Python.
     - several other columns, such as, **total_transaction, avg_transaction,	max_transaction,	min_transaction,	transaction_count,	total_over_limit,	avg_transaction_to_limit_ratio and total_transaction_to_limit_ratio**, are created on Python.   
 
-## Plan of the Fraud Detection System
+## 🛠️ Plan of the Fraud Detection System
+The system will:
+- Ingest large volumes of transaction data.
+- Train a neural network for fraud detection.
+- Provide predictions and insights efficiently.
+
+## ✏️ Design of the System Using OOP Concepts
+OOP principles such as encapsulation, abstraction, inheritance, and polymorphism will make the solution modular and scalable.
+
+**Classes that are Included:**
+- *DataHandler*: For data ingestion, cleaning, and preprocessing.
+- *FeatureEngineer*: For creating new features and aggregating existing ones.
+- *FraudDetectionModel*: For building, training, and evaluating the neural network.
+- *InsightsGenerator*: For analyzing results and generating insights.
+- *Pipeline*: A class to orchestrate the workflow.
+
+  
 
