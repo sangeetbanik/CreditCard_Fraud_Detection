@@ -39,6 +39,11 @@ transaction_history = df.groupby('credit_card').agg(
 transaction_history['avg_transaction_to_limit_ratio'] = transaction_history['avg_transaction'] / df['card_limit'].mean()
 transaction_history['total_transaction_to_limit_ratio'] = transaction_history['total_transaction'] / df['card_limit'].mean()
 
+#Merging the new features to main dataset
+df = pd.merge(df,transaction_history, how='outer', on='credit_card')
+
+#
+
 
 
 
