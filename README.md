@@ -30,3 +30,13 @@ Here is the column description for *transactions.csv*<br>
 | transaction_dollar_amount | The dollar amount of the transaction                                         |
 | Long                      | The longitude coordinate of the transaction location                         |
 | Lat                       | The latitude coordinate of the transaction location                          |
+
+**Data Pre-processing**<br>
+- Data Wrangling : all the modifications were done to the *transaction.csv* file, later which was used in developing the detection algorithm.
+    - added a new column, **card_limit**, using vlookup function in excel.
+    - removed two columns, **Long** and **Lat**, as they were not required for our detection model.
+    - new columns such as, **year**,**month**, **day** and **day_of_week**, are created from the **date** column on Python.
+    - several other columns, such as, **total_transaction, avg_transaction,	max_transaction,	min_transaction,	transaction_count,	total_over_limit,	avg_transaction_to_limit_ratio and total_transaction_to_limit_ratio**, are created on Python.   
+
+## Plan of the Fraud Detection System
+
