@@ -60,7 +60,7 @@ Since, fraud detection is a supervised learning problem, we need labels to train
 We used **Isolation Forest** to identify unusual patterns that may indicate fraud.
 - The model has flagged data points with -1 as anomalies (potential fraud).
 
-Fraud detection model :  
+Fraud detection model :  [CODE](https://github.com/sangeetbanik/CreditCard_Fraud_Detection/blob/main/Detection_model.py)
 
 
   
