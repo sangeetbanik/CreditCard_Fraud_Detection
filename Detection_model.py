@@ -9,6 +9,7 @@ from sklearn.ensemble import IsolationForest
 from sklearn.cluster import KMeans
 from urllib.request import DataHandler
 from sklearn.decomposition import PCA
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
 print('Import successful')
 
@@ -158,4 +159,15 @@ plt.xlabel('Fraud Prediction (-1: Fraud, 1: Normal)')
 plt.ylabel('Transaction Amount')
 plt.show()
 
+
+accuracy = accuracy_score(true_labels, data['fraud_prediction'])
+precision = precision_score(true_labels, data['fraud_prediction'], pos_label=-1)  # Assuming -1 is the fraud label
+recall = recall_score(true_labels, data['fraud_prediction'], pos_label=-1)
+f1 = f1_score(true_labels, data['fraud_prediction'], pos_label=-1)
+
+# Print the results
+print(f"Accuracy: {accuracy:.4f}")
+print(f"Precision: {precision:.4f}")
+print(f"Recall: {recall:.4f}")
+print(f"F1 Score: {f1:.4f}")
 
